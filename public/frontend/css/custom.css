@@ -1,0 +1,134 @@
+a{
+    text-decoration: none !important;
+    color: black  !important;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+.checkout-form label{
+    font-size:12px;
+    font-weight: 700;
+}
+
+.checkout-form input{
+    font-size: 14px;
+    padding: 5px;
+    font-weight: 400;
+}
+
+.order_details label{
+    font-size:12px;
+    font-weight: 700;
+}
+
+.order_details div{
+    font-size:14px;
+    padding:5px !important;
+}
+
+
+
+
+.navbar{
+	padding: 8px 0;
+}
+.navbar-brand {
+	font-weight: 700;
+	text-transform: uppercase;
+	color: white !important;
+}
+.nav-item{
+	font-weight: 600;
+}
+.navbar-light .navbar-nav .nav-item .nav-link:hover,
+.navbar-light .navbar-nav .nav-item.active .nav-link{
+	background: white;
+	color: black !important;
+    border-radius: 5px;
+}
+.navbar-light .navbar-nav .nav-item .nav-link{
+	color: white !important;
+	padding: 5px 15px;
+}
+.navbar-light .navbar-toggler{
+	border: none;
+	color: #fff;
+	border: 2px solid #7f7f7f;
+}
+header nav ul li a{
+    
+    color: var(--pure);
+    text-decoration: none;
+    margin-right: 1rem;
+    padding-left: 4rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    transition: all .3s ease;
+}
+
+
+
+.btn-color{
+    background: #BF40BF;
+    color: #fff !important;
+}
+
+.color{
+    background: #BF40BF !important;
+}
+
+div.scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+  }
+  
+  .text-color{
+    color: #BF40BF !important;
+  }
+
+
+
+  /* rating */
+.rating-css div {
+    color: #ffe400;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 20px 0;
+  }
+  .rating-css input {
+    display: none;
+  }
+  .rating-css input + label {
+    font-size: 60px;
+    text-shadow: 1px 1px 0 #8f8420;
+    cursor: pointer;
+  }
+  .rating-css input:checked + label ~ label {
+    color: #b4afaf;
+  }
+  .rating-css label:active {
+    transform: scale(0.8);
+    transition: 0.3s ease;
+  }
+
+/* End of Star Rating */
+
+.checked{
+  color: #ffbb00;
+}
+
+
+.footer-dark {
+  position: absolute;
+  left: 0;
+  margin-bottom: 0px;
+  right: 0;
+  width: 100%;
+}
+
+
