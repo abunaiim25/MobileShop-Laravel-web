@@ -96,7 +96,7 @@ Admin Order view
                                 @csrf
                                 @method('PUT')
                                     <select class="form-select" name="order_status">
-                                        <option {{ $orders->status == '0' ? 'selected':''}} value="0">pending</option>
+                                        <option {{ $orders->status == '0' ? 'selected':''}} value="0">Pending</option>
                                         <option {{ $orders->status == '1' ? 'selected':''}} value="1">Completed</option>
                                     </select>
                                     <button type="submit" class="btn btn-primary float-end mt-3">Update</button>

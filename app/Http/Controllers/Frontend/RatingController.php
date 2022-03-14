@@ -9,6 +9,7 @@ use App\Models\Rating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class RatingController extends Controller
 {
     public function addrating(Request $request)

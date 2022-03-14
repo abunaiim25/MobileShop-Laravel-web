@@ -63,6 +63,7 @@
         </div>
     </div>
 
+
     <div class="py-3 mb-4 ">
         <div class="container">
             <div class="mb-0 h6">
@@ -138,8 +139,9 @@
                         </p>
 
                         <hr>
+                        
                         @if ($products->qty > 0)
-                            <label class="badge bg-success" for="">In stock</label>
+                            <label class="badge bg-success" for="">{{$products->qty}} In stock</label>
                         @else
                             <label class="badge bg-danger" for="">Out of stock</label>
                         @endif
@@ -200,20 +202,19 @@
                     </a>
                 </div>
 
-               
             </div>
-
-
-
         </div>
-{{--
+
+
+        
         <div class="col-md-12 mt-4 p-3">
             @foreach ($reviews as $item)
                 <div class="user-review">
 
                     <label for="">
-                        <h5>{{ $item->user->name }}</h5>
+                        {{$item->user->name}}
                     </label>
+                    
 
                     @if ($item->user_id == Auth::id())
                         <a href="{{ url('edit-review/' . $products->slug . '/userreview') }}"
@@ -221,23 +222,7 @@
                     @endif
                     <br>
 
-                    @php
-                        $rating = App\Models\Rating::where('prod_id', $products->id)
-                            ->where('user_id', $item->user->id)
-                            ->first();
-                    @endphp
 
-                    @if ($rating)
-                        @php
-                            $user_rated = $rating->stars_rated;
-                        @endphp
-                        @for ($i = 1; $i <= $user_rated; $i++)
-                            <i class="fa fa-star checked"></i>
-                        @endfor
-                        @for ($j = $user_rated + 1; $j <= 5; $j++)
-                            <i class="fa fa-star"></i>
-                        @endfor
-                    @endif
 
                     <small>Reviewed on {{ $item->created_at->format('d M Y') }}</small>
                     <p>
@@ -247,7 +232,7 @@
             @endforeach
         </div>
     </div>
---}}
+
 @endsection
 
 
