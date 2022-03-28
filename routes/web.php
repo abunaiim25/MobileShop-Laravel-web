@@ -36,6 +36,11 @@ Route::get('/', function () {
 });
 */
 
+//languages
+Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
+Route::get('/languageDemo', 'App\Http\Controllers\HomeController@languageDemo');
+
+
 //3.1
 Route::get('/',[FrontendController::class,'index']);
 Route::get('category',[FrontendController::class,'category']);
@@ -157,3 +162,7 @@ Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 
 Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 //SSLCOMMERZ END
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

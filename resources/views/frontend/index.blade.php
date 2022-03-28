@@ -6,11 +6,31 @@
 
 
 @section('content')
-
     @include('layouts.inc.frontslider')
 
     <div class="py-5">
         <div class="container">
+
+            {{-- languages --}}
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="flag-icon flag-icon-{{ Config::get('languages')[App::getLocale()]['flag-icon'] }}"></span>
+                    {{ Config::get('languages')[App::getLocale()]['display'] }}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    @foreach (Config::get('languages') as $lang => $language)
+                        @if ($lang != App::getLocale())
+                            <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span
+                                    class="flag-icon flag-icon-{{ $language['flag-icon'] }}"></span>
+                                {{ $language['display'] }}</a>
+                        @endif
+                    @endforeach
+                </div>
+            </li>
+
+
             <div class="row">
                 <h2>Featured Products</h2>
 
@@ -19,18 +39,18 @@
                         <div class=" item mb-4 p-2">
                             <div class="card border-0 shadow p-3">
 
-                                <a href="{{ url('category/'.$prod->category->slug.'/'.$prod->slug) }}">
-                                <img class="rounded mx-auto d-block mt-3"
-                                    src="{{ asset('assets/uploads/products/' . $prod->image) }}"
-                                    style="width: 150px; height: 185px;" alt=" Product Image">
+                                <a href="{{ url('category/' . $prod->category->slug . '/' . $prod->slug) }}">
+                                    <img class="rounded mx-auto d-block mt-3"
+                                        src="{{ asset('assets/uploads/products/' . $prod->image) }}"
+                                        style="width: 150px; height: 185px;" alt=" Product Image">
 
-                                <div class="card-body">
-                                    <h5>{{ $prod->name }}</h5>
-                                    <small><span class="float-start">{{ $prod->selling_price }}TK</span></small>
-                                    <small><span class="float-end">
-                                            <s>{{ $prod->original_price }}TK</s></span></small>
-                                </div>
-                            </a>
+                                    <div class="card-body">
+                                        <h5>{{ $prod->name }}</h5>
+                                        <small><span class="float-start">{{ $prod->selling_price }}TK</span></small>
+                                        <small><span class="float-end">
+                                                <s>{{ $prod->original_price }}TK</s></span></small>
+                                    </div>
+                                </a>
 
                             </div>
 
@@ -76,7 +96,6 @@
                     </div>
                 </div>
             </div>
-
         @endsection
 
 
